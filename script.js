@@ -1,7 +1,14 @@
 let input = document.getElementById("input")
 let output = document.getElementById("output")
-let count = 0; //to keep track of the number of operations
-let arr = []; //stores the operations performed
+let oprn = document.getElementById("op") //pervious operation performed
+let count = 0; //to keep track of number of operations performed
+//to keep track of operations performed
+let arr = [];
+
+function display(digit){
+    input.value = input.value + digit //keypad digits
+}
+//factorial 
 function factorial(n){
     let fact = 1
     while(n>0){
@@ -13,6 +20,7 @@ function factorial(n){
 //for scientific operations
 function scientific(operator){
     let num
+    oprn.value = operator
     if(input.value===""){
         num = Number(output.value)
     }
@@ -50,7 +58,7 @@ function scientific(operator){
     else if(operator==="log"){
         result = Math.log(num)
     }
-        //clears and resets all the values
+    //clears and resets all the values
     else if(operator==="C"){
         input.value = ""
         output.value = ""
@@ -70,6 +78,7 @@ function scientific(operator){
 
 
 function operation(operator) {
+    oprn.value = operator
     let num = Number(input.value);
     input.value = "";
     let result = Number(output.value)
@@ -121,3 +130,4 @@ function operation(operator) {
     output.value = result;
     count++;
 }
+
