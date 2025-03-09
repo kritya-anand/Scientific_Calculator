@@ -33,6 +33,14 @@ body {
     margin-right: 35px;
 }
 
+#op{
+    height:2vh;
+    width: 6vh;
+    margin-left: 65px;
+    font-size: 20px;
+    text-align: center;
+}
+
 .display::placeholder{
     text-align: center;
     font-weight: bold;
