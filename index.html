@@ -5,34 +5,47 @@
     <title>CALCULATOR</title>
 </head>
 <body>
-    <div class="calculator">
+    <div class="calculator">c
         <input type="text" id="input" class="display" >
         <input type="text" id="output" class="display" readonly placeholder="OUTPUT">
+        <input type="text" id="op" class="display" readonly >
         <div class="buttons">
+            <button class="btn" onclick="scientific('sqrt')" >sqrt</button>
+            <button class="btn" onclick="scientific('sin')" >sin</button>
+            <button class="btn" onclick="scientific('cos')" >cos</button>
+            <button class="btn" onclick="scientific('tan')" >tan</button>
             <button class="btn" onclick="scientific('C')" >C</button>
-            <button class="btn"onclick="scientific('sqr')">x²</button>
-            <button class="btn"onclick="operation('log10')">log10</button>
-            <button class="btn" onclick="operation('/')">÷</button>
 
-            <button class="btn"onclick="scientific('abs')">|x|</button>
-            <button class="btn"onclick="scientific('exp')">exp</button>
-            <button class="btn"onclick="operation('%')">mod</button>
-            <button class="btn"onclick="operation('*')">×</button>
+            <button class="btn" onclick="operation('pow')" >xʸ</button>
+            <button class="btn" onclick="scientific('floor')" >floor</button>
+            <button class="btn" onclick="scientific('ceil')" >ceil</button>
+            <button class="btn" onclick="operation('%')" >mod</button>
+            <button class="btn" onclick="operation('/')" >/</button>
 
-            <button class="btn"onclick="scientific('sqrt')">sqrt</button>
-            <button class="btn"onclick="operation('pow')">xʸ</button>
-            <button class="btn"onclick="scientific('cos')">cos</button>
-            <button class="btn" onclick="operation('-')">-</button>
+            <button class="btn" onclick="scientific('sqr')" >x²</button>
+            <button class="btn" onclick="display('9')" >9</button>
+            <button class="btn" onclick="display('8')" >8</button>
+            <button class="btn" onclick="display('7')" >7</button>
+            <button class="btn" onclick="operation('*')" >X</button>
 
-            <button class="btn"onclick="scientific('sin')">sin</button>
-            <button class="btn"onclick="scientific('tan')">tan</button>
-            <button class="btn"onclick="scientific('floor')">floor</button>
-            <button class="btn" onclick="operation('+')">+</button>
+            <button class="btn" onclick="scientific('abs')" >abs</button>
+            <button class="btn" onclick="display('6')" >6</button>
+            <button class="btn" onclick="display('5')" >5</button>
+            <button class="btn" onclick="display('4')" >4</button>
+            <button class="btn" onclick="operation('-')" >-</button>
 
-            <button class="btn"onclick="scientific('fac')">n!</button>
-            <button class="btn"onclick="scientific('ceil')">ceil</button>
-            <button class="btn"onclick="scientific('log')">log</button>
-            <button class="btn"onclick="operation('=')">=</button>
+            <button class="btn" onclick="scientific('exp')" >exp</button>
+            <button class="btn" onclick="display('3')" >3</button>
+            <button class="btn" onclick="display('2')" >2</button>
+            <button class="btn" onclick="display('1')" >1</button>
+            <button class="btn" onclick="operation('+')" >+</button>
+
+            <button class="btn" onclick="scientific('fac')" >n!</button>
+            <button class="btn" onclick="scientific('log10')" >log10</button>
+            <button class="btn" onclick="scientific('log')" >log</button>
+            <button class="btn" onclick="display('0')" >0</button>
+            <button class="btn" onclick="operation('=')" >=</button>
+            
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
