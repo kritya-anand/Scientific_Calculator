@@ -1,6 +1,5 @@
 let input = document.getElementById("input")
 let output = document.getElementById("output")
-let oprn = document.getElementById("op") //operation performed
 let count = 0; //to keep track of the number of operations
 let arr = []; //stores the operations performed
 function factorial(n){
@@ -14,7 +13,6 @@ function factorial(n){
 //for scientific operations
 function scientific(operator){
     let num
-    oprn.value = operator
     if(input.value===""){
         num = Number(output.value)
     }
@@ -72,7 +70,6 @@ function scientific(operator){
 
 
 function operation(operator) {
-    oprn.value = operator
     let num = Number(input.value);
     input.value = "";
     let result = Number(output.value)
