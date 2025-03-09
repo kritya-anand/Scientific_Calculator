@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href = "style.css">
+    <title>CALCULATOR</title>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="input" class="display" >
+        <input type="text" id="output" class="display" readonly placeholder="OUTPUT">
+        <div class="buttons">
+            <button class="btn" onclick="scientific('C')" >C</button>
+            <button class="btn"onclick="scientific('sqr')">x²</button>
+            <button class="btn"onclick="operation('log10')">log10</button>
+            <button class="btn" onclick="operation('/')">÷</button>
+
+            <button class="btn"onclick="scientific('abs')">|x|</button>
+            <button class="btn"onclick="scientific('exp')">exp</button>
+            <button class="btn"onclick="operation('%')">mod</button>
+            <button class="btn"onclick="operation('*')">×</button>
+
+            <button class="btn"onclick="scientific('sqrt')">sqrt</button>
+            <button class="btn"onclick="operation('pow')">xʸ</button>
+            <button class="btn"onclick="scientific('cos')">cos</button>
+            <button class="btn" onclick="operation('-')">-</button>
+
+            <button class="btn"onclick="scientific('sin')">sin</button>
+            <button class="btn"onclick="scientific('tan')">tan</button>
+            <button class="btn"onclick="scientific('floor')">floor</button>
+            <button class="btn" onclick="operation('+')">+</button>
+
+            <button class="btn"onclick="scientific('fac')">n!</button>
+            <button class="btn"onclick="scientific('ceil')">ceil</button>
+            <button class="btn"onclick="scientific('log')">log</button>
+            <button class="btn"onclick="operation('=')">=</button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
