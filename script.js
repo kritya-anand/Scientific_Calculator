@@ -4,9 +4,16 @@ let oprn = document.getElementById("op") //pervious operation performed
 let count = 0; //to keep track of number of operations performed
 //to keep track of operations performed
 let arr = [];
+let lastResult = null; // Stores last result to continue operations correctly
+let newCalculation = true; // Tracks if a new operation has started
 
 function display(digit){
-    input.value = input.value + digit //keypad digits
+    if (newCalculation) {
+        input.value = digit;
+        newCalculation = false;
+    } else {
+        input.value += digit; // keypad digits
+    }
 }
 //factorial 
 function factorial(n){
@@ -21,12 +28,13 @@ function factorial(n){
 function scientific(operator){
     let num
     oprn.value = operator
-    if(input.value===""){
-        num = Number(output.value)
+
+    if (input.value === "" && output.value !== "") {
+        num = Number(output.value);
+    } else {
+        num = Number(input.value);
     }
-    else{
-        num = Number(input.value)
-    }
+
     let result
     if(operator==="sqrt"){
         result = Math.sqrt(num)
@@ -64,6 +72,7 @@ function scientific(operator){
         output.value = ""
         count = 0
         arr=[]
+        lastResult = null
         return;
     }
     else if(operator==="fac"){
@@ -74,6 +83,8 @@ function scientific(operator){
     }
     output.value = result
     input.value = ""
+    lastResult = result
+    newCalculation = true
 }
 
 
@@ -84,6 +95,9 @@ function operation(operator) {
     let result = Number(output.value)
 
     if (operator === "=") {
+        if(arr.length===0){
+            return;
+        }
         //recalls the last operation stored in arr
         //executes and returns the final value
         let lastOp = arr[arr.length - 1]; 
@@ -97,6 +111,15 @@ function operation(operator) {
         else if (lastOp === "pow") result = Math.pow(result, num);
 
         output.value = result;
+        lastResult = result
+        input.value = ""
+        newCalculation = true;
+        return;
+    }
+
+    if (input.value === "" && lastResult !== null) {
+        arr.push(operator);
+        oprn.value = operator;
         return;
     }
 
@@ -104,8 +127,9 @@ function operation(operator) {
     //logic for first operation performed
     //or output box is empty
     if (count === 0||output.value==="") {
-        result = num;
-    } else {
+        lastResult = num;
+    } 
+    else {
         let op = arr[count - 1]; //last operation performed
         if (op === "+"){ 
             result += num
@@ -127,7 +151,10 @@ function operation(operator) {
         }
     }
 
-    output.value = result;
+    arr.push(operator);
+    oprn.value = operator;
+    output.value = lastResult;
+    input.value = "";
     count++;
+    newCalculation = true;
 }
-
