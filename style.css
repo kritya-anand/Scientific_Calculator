@@ -1,59 +1,81 @@
+/* Global Styles */
 body {
     background: linear-gradient(135deg, #ecf0f1, #dfe6e9);
-    
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
+/* Calculator Container */
 .calculator {
     background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
     border-radius: 12px;
     padding: 20px;
-    box-shadow:  0px 15px 15px rgba(0, 0, 0, 0.8);
-    width: 70%;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
+    width: 90%;
+    max-width: 400px;
+    min-width: 280px;
     transition: transform 0.3s ease-in-out;
-    height: 80vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Display Screen */
 .display {
     background: linear-gradient(135deg, #ecf0f1, #dfe6e9);
     padding: 15px;
     font-size: 2rem;
     border-radius: 10px;
     text-align: right;
-    width: 20%;
-    position: relative;
-    left:25%;
-    
+    width: 100%;
+    min-height: 60px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    word-wrap: break-word;
+    overflow: hidden;
 }
 
-#input{
-    margin-right: 35px;
-}
-
-#op{
-    height:2%;
-    width: 3%;
-    margin-left: 65px;
-    font-size: 20px;
-    text-align: center;
-}
-
-.display::placeholder{
-    text-align: center;
+.display::placeholder {
+    text-align: right;
     font-weight: bold;
-
+    color: #888;
 }
 
+/* Input Fields */
+#input {
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: right;
+}
+
+#op {
+    height: 40px;
+    width: 60px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Button Grid */
 .buttons {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 2px;
-    margin-top: 35px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    width: 100%;
 }
 
+/* Buttons */
 .btn {
     background: linear-gradient(145deg, #2e2e2e, #3a3a3a);
     color: white;
@@ -64,11 +86,31 @@ body {
     cursor: pointer;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     transition: 0.2s;
+    text-align: center;
 }
 
-.btn:hover{
-    cursor: pointer;
+.btn:hover {
     transform: scale(1.05);
+    background: linear-gradient(145deg, #3a3a3a, #4a4a4a);
 }
 
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .calculator {
+        width: 95%;
+    }
+
+    .buttons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .btn {
+        font-size: 1.2rem;
+        padding: 12px;
+    }
+
+    .display {
+        font-size: 1.8rem;
+    }
+}
 
